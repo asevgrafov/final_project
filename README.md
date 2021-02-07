@@ -1,7 +1,6 @@
 # final_project
-https://travis-ci.com/github/asevgrafov/final_project
+https://travis-ci.com/asevgrafov/final_project.svg?token=WcrzYpnxpyLywaVB3x5Y&branch=main
 # Автотесты
-
 Selenium Python
 
 # Контроль качества кода
