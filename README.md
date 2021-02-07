@@ -1,6 +1,5 @@
 # final_project
-https://travis-ci.org/travis-ci/docs-travis-ci-com.svg?branch=master
-# Автотесты
+[![Build Status](https://travis-ci.org/travis-ci/docs-travis-ci-com.svg?branch=master)](https://travis-ci.org/travis-ci/docs-travis-ci-com)# Автотесты
 Selenium Python
 
 # Контроль качества кода
