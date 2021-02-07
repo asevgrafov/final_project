@@ -1,5 +1,5 @@
 # final_project
-https://travis-ci.com/asevgrafov/final_project.svg?token=WcrzYpnxpyLywaVB3x5Y&branch=main
+https://travis-ci.org/travis-ci/docs-travis-ci-com.svg?branch=master
 # Автотесты
 Selenium Python
 
