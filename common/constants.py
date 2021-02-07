@@ -1,3 +1,7 @@
 class Users:
-    EMAIL = "standard_user"
+    USERNAME = "standard_user"
     PASSWORD = "secret_sauce"
+
+
+class Title:
+    TITLE = "Swag Labs"
