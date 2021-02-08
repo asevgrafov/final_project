@@ -5,6 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from common.logger import setup
 
 from pages.authorization_page import AuthorizationPage
+from pages.main_page import MainPage
 
 logger = logging.getLogger()
 
@@ -25,6 +26,7 @@ class Application:
             self.driver = webdriver.Chrome(r"C:\chromedriver.exe", options=options)
         self.driver.implicitly_wait(10)
         self.authorization = AuthorizationPage(self)
+        self.main_page = MainPage(self)
 
     def open_main_page(self):
         logger.info("Open main page")
