@@ -1,15 +1,18 @@
 import allure
-from common.constants import Users, MainFooter
+import pytest
+
+from common.constants import MainFooter
 
 
 class TestFooterMain:
     @allure.story("Авторизация")
     @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
     def test_footer_data(self, app):
-        app.open_main_page()
-        username = Users.STANDARD_USERNAME
-        password = Users.PASSWORD
-        app.authorization.auth(username=username, password=password)
+        """
+        1. Авторизоваться
+        2. Проверить наличие иконок в футере
+        """
         assert app.main_page.twitter_text() == MainFooter.TWITTER
         assert app.main_page.facebook_text() == MainFooter.FACEBOOK
         assert app.main_page.linkedin_text() == MainFooter.LINKEDIN
