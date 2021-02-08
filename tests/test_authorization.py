@@ -18,7 +18,7 @@ class TestAuth:
             (Users.PERFORMANCE_GLITCH_USERNAME, Users.PASSWORD),
         ),
     )
-    def test_valid_auth(self, app, username, password):
+    def test_valid_aut(self, app, username, password):
         """
         1. Открыть страницу
         2. Ввести username и password
