@@ -27,7 +27,7 @@ class TestAuth:
         """
         app.open_main_page()
         app.authorization.auth(username=username, password=password)
-        assert app.authorization.get_title() == Title.TITLE
+        assert app.main_page.get_title() == Title.TITLE
 
     @allure.story("Авторизация")
     @allure.severity("critical")

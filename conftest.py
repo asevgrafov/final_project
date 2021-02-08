@@ -15,7 +15,7 @@ def app(request):
     app.browser_close()
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def auth(request, app):
     username = request.config.getoption("--username")
     password = request.config.getoption("--password")

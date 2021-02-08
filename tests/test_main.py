@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from common.constants import MainFooter, Cart
+from common.constants import MainFooter, Cart, MainHeader, SauceLabs, Title
 
 
 class TestFooterMain:
@@ -31,3 +31,45 @@ class TestHeaderMain:
         """
         app.main_page.cart_icon_click()
         assert app.cart_page.subheader_text() == Cart.YOUR_CART
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    def test_move_to_all_items(self, app):
+        """
+        1. Авторизоваться
+        2. Кликнуть по бургеру
+        3. Кликнуть по all items
+        4. Проверить текст product label
+        """
+        app.main_page.burger_button_click()
+        app.main_page.all_items_click()
+        assert app.main_page.product_label_text() == MainHeader.PRODUCT_LABEL
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    def test_move_to_about(self, app):
+        """
+        1. Авторизоваться
+        2. Кликнуть по бургеру
+        3. Кликнуть по about
+        4. Проверить Title?
+        """
+        app.main_page.burger_button_click()
+        app.main_page.about_click()
+        assert app.saucelabs.get_title() == SauceLabs.TITLE
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    def test_move_to_logout(self, app):
+        """
+        1. Авторизоваться
+        2. Кликнуть по бургеру
+        3. Кликнуть по logout
+        4. Проверить Title?
+        """
+        app.main_page.burger_button_click()
+        app.main_page.logout_click()
+        assert app.authorization.get_title() == Title.TITLE

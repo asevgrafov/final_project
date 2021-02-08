@@ -1,4 +1,4 @@
-from locators.main import MainFooterLocators, MainHeaderLocators
+from locators.main import MainFooterLocators, MainHeaderLocators, BurgerButtonLocators
 import logging
 
 logger = logging.getLogger()
@@ -7,6 +7,9 @@ logger = logging.getLogger()
 class MainPage:
     def __init__(self, app):
         self.app = app
+
+    def get_title(self):
+        return self.app.driver.title
 
     def twitter_icon(self):
         logger.info("Пытаемся найти иконку Twitter")
@@ -41,3 +44,37 @@ class MainPage:
 
     def cart_icon_click(self):
         self.cart_icon().click()
+
+    def burger_button(self):
+        return self.app.driver.find_element(*MainHeaderLocators.BURGER_BUTTON)
+
+    def burger_button_click(self):
+        logger.info("Пытаемся кликнуть по burger")
+        self.burger_button().click()
+
+    def all_items(self):
+        return self.app.driver.find_element(*BurgerButtonLocators.ALL_ITEMS)
+
+    def all_items_click(self):
+        logger.info("Пытаемся кликнуть по all items")
+        self.all_items().click()
+
+    def product_label(self):
+        return self.app.driver.find_element(*MainHeaderLocators.PRODUCT_LABEL)
+
+    def product_label_text(self):
+        return self.product_label().text
+
+    def about(self):
+        return self.app.driver.find_element(*BurgerButtonLocators.ABOUT)
+
+    def about_click(self):
+        logger.info("Пытаемся кликнуть по about")
+        self.about().click()
+
+    def logout(self):
+        return self.app.driver.find_element(*BurgerButtonLocators.LOGOUT)
+
+    def logout_click(self):
+        logger.info("Пытаемся кликнуть по logout")
+        self.logout().click()
