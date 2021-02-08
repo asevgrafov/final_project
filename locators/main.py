@@ -12,3 +12,11 @@ class MainHeaderLocators:
     CART = (By.XPATH, '//*[@data-icon="shopping-cart"]')
     BURGER_BUTTON = (By.XPATH, '//*[@class="bm-burger-button"]')
     SORT_CONTAINER = (By.XPATH, '//*[@class="product_sort_container"]')
+    PRODUCT_LABEL = (By.XPATH, '//*[@class="product_label"]')
+
+
+class BurgerButtonLocators:
+    ALL_ITEMS = (By.XPATH, '//*[@id="inventory_sidebar_link"]')
+    ABOUT = (By.XPATH, '//*[@id="about_sidebar_link"]')
+    LOGOUT = (By.XPATH, '//*[@id="logout_sidebar_link"]')
+    RESET_APP_STATE = (By.XPATH, '//*[@id="reset_sidebar_link"]')

@@ -30,5 +30,13 @@ class MainFooter:
     )
 
 
+class MainHeader:
+    PRODUCT_LABEL = "Products"
+
+
 class Cart:
     YOUR_CART = "Your Cart"
+
+
+class SauceLabs:
+    TITLE = "Cross Browser Testing, Selenium Testing, Mobile Testing | Sauce Labs"
