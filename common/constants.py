@@ -19,3 +19,12 @@ class Alerts:
         "Epic sadface: Username and password do not match any user in this service"
     )
     LOCKED_USER_ALERT = "Epic sadface: Sorry, this user has been locked out."
+
+
+class MainFooter:
+    TWITTER = "Twitter"
+    FACEBOOK = "Facebook"
+    LINKEDIN = "LinkedIn"
+    FOOTER_COPY = (
+        "© 2020 Sauce Labs. All Rights Reserved. " "Terms of Service | Privacy Policy"
+    )
