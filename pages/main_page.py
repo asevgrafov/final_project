@@ -1,4 +1,4 @@
-from locators.main import MainFooterLocators
+from locators.main import MainFooterLocators, MainHeaderLocators
 import logging
 
 logger = logging.getLogger()
@@ -35,3 +35,9 @@ class MainPage:
 
     def footer_copy_text(self):
         return self.footer_copy().text
+
+    def cart_icon(self):
+        return self.app.driver.find_element(*MainHeaderLocators.CART)
+
+    def cart_icon_click(self):
+        self.cart_icon().click()
