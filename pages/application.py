@@ -1,10 +1,10 @@
-import logging
 from selenium import webdriver
+import logging
+from common.logger import setup
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from common.logger import setup
-
 from pages.authorization_page import AuthorizationPage
+from pages.cart_page import CartPage
 from pages.main_page import MainPage
 
 logger = logging.getLogger()
@@ -27,6 +27,7 @@ class Application:
         self.driver.implicitly_wait(10)
         self.authorization = AuthorizationPage(self)
         self.main_page = MainPage(self)
+        self.cart_page = CartPage(self)
 
     def open_main_page(self):
         logger.info("Open main page")

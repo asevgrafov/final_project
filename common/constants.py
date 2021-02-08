@@ -28,3 +28,7 @@ class MainFooter:
     FOOTER_COPY = (
         "© 2020 Sauce Labs. All Rights Reserved. " "Terms of Service | Privacy Policy"
     )
+
+
+class Cart:
+    YOUR_CART = "Your Cart"
