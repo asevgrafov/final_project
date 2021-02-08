@@ -15,6 +15,14 @@ def app(request):
     app.browser_close()
 
 
+@pytest.fixture(scope="class")
+def auth(request, app):
+    username = request.config.getoption("--username")
+    password = request.config.getoption("--password")
+    app.open_main_page()
+    app.authorization.auth(username, password)
+
+
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     outcome = yield
