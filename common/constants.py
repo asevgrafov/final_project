@@ -15,5 +15,7 @@ class Title:
 
 class Alerts:
     EMPTY_ALERT = "Epic sadface: Username is required"
-    INVALID_DATA_ALERT = "Epic sadface: Username and password do not match any user in this service"
+    INVALID_DATA_ALERT = (
+        "Epic sadface: Username and password do not match any user in this service"
+    )
     LOCKED_USER_ALERT = "Epic sadface: Sorry, this user has been locked out."
