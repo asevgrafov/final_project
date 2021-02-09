@@ -78,3 +78,10 @@ class MainPage:
     def logout_click(self):
         logger.info("Пытаемся кликнуть по logout")
         self.logout().click()
+
+    def reset_app(self):
+        return self.app.driver.find_element(*BurgerButtonLocators.RESET_APP_STATE)
+
+    def reset_app_click(self):
+        logger.info("Пытаемся кликнуть по reset app state")
+        self.reset_app().click()

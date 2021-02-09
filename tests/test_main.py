@@ -73,3 +73,16 @@ class TestHeaderMain:
         app.main_page.burger_button_click()
         app.main_page.logout_click()
         assert app.authorization.get_title() == Title.TITLE
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    @pytest.mark.skip(reason="При клике на reset app state ничего не происходит")
+    def test_move_to_reset_app(self, app):
+        """
+        1. Авторизоваться
+        2. Кликнуть по бургеру
+        3. Кликнуть по reset app state
+        """
+        app.main_page.burger_button_click()
+        app.main_page.reset_app_click()
