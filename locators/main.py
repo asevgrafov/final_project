@@ -20,3 +20,9 @@ class BurgerButtonLocators:
     ABOUT = (By.XPATH, '//*[@id="about_sidebar_link"]')
     LOGOUT = (By.XPATH, '//*[@id="logout_sidebar_link"]')
     RESET_APP_STATE = (By.XPATH, '//*[@id="reset_sidebar_link"]')
+
+
+class MainLocators:
+    ADD_TO_CART = (By.XPATH, '//*[@class="btn_primary btn_inventory"]')
+    REMOVE = (By.XPATH, '//*[@class="btn_secondary btn_inventory"]')
+    PRODUCT = (By.XPATH, '//*[@id="item_0_title_link"]')
