@@ -36,6 +36,17 @@ class MainHeader:
 
 class Cart:
     YOUR_CART = "Your Cart"
+    REMOVE = "REMOVE"
+
+
+class Product:
+    NAME = "Sauce Labs Bike Light"
+    DESCRIPTION = (
+        "A red light isn't the desired state in testing but it sure "
+        "helps when riding your bike at night. Water-resistant with 3 "
+        "lighting modes, 1 AAA battery included."
+    )
+    PRICE = "$9.99"
 
 
 class SauceLabs:

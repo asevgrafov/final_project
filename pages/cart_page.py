@@ -14,3 +14,30 @@ class CartPage:
 
     def subheader_text(self):
         return self.get_subheader().text
+
+    def remove_button(self):
+        return self.app.driver.find_element(*CartLocators.REMOVE)
+
+    def remove_button_click(self):
+        self.remove_button().click()
+
+    def remove_button_text(self):
+        return self.remove_button().text
+
+    def get_name(self):
+        return self.app.driver.find_element(*CartLocators.ITEM_NAME)
+
+    def get_name_text(self):
+        return self.get_name().text
+
+    def get_description(self):
+        return self.app.driver.find_element(*CartLocators.ITEM_DESCRIPTION)
+
+    def get_description_text(self):
+        return self.get_description().text
+
+    def get_price(self):
+        return self.app.driver.find_element(*CartLocators.ITEM_PRICE)
+
+    def get_price_text(self):
+        return self.get_price().text

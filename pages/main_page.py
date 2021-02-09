@@ -1,4 +1,9 @@
-from locators.main import MainFooterLocators, MainHeaderLocators, BurgerButtonLocators
+from locators.main import (
+    MainFooterLocators,
+    MainHeaderLocators,
+    BurgerButtonLocators,
+    MainLocators,
+)
 import logging
 
 logger = logging.getLogger()
@@ -43,6 +48,7 @@ class MainPage:
         return self.app.driver.find_element(*MainHeaderLocators.CART)
 
     def cart_icon_click(self):
+        logger.info("Пытаемся кликнуть по иконке корзины")
         self.cart_icon().click()
 
     def burger_button(self):
@@ -85,3 +91,17 @@ class MainPage:
     def reset_app_click(self):
         logger.info("Пытаемся кликнуть по reset app state")
         self.reset_app().click()
+
+    def add_to_cart(self):
+        return self.app.driver.find_element(*MainLocators.ADD_TO_CART)
+
+    def add_to_cart_click(self):
+        logger.info("Пытаемся добавить товар в корзину")
+        self.add_to_cart().click()
+
+    def move_to_product(self):
+        return self.app.driver.find_element(*MainLocators.PRODUCT)
+
+    def move_to_product_click(self):
+        logger.info("Пытаемся кликнуть по товару")
+        self.move_to_product().click()
