@@ -8,3 +8,4 @@ class CheckoutLocators:
     POSTAL_CODE = (By.XPATH, '//*[@id="postal-code"]')
     CANCEL = (By.XPATH, '//*[@class="cart_cancel_link btn_secondary"]')
     CONTINUE = (By.XPATH, '//*[@class="btn_primary cart_button"]')
+    ERROR_ALERT = (By.XPATH, '//*[@data-test="error"]')
