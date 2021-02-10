@@ -21,8 +21,9 @@ class TestCart:
         name = app.product_page.get_name_text()
         description = app.product_page.get_description_text()
         price = app.product_page.get_price_text()
-        app.main_page.cart_icon_click()
+        app.product_page.cart_icon_click()
         assert name == app.cart_page.get_name_text()
         assert description == app.cart_page.get_description_text()
         assert price == Product.PRICE
         assert app.cart_page.remove_button_text() == Cart.REMOVE
+        app.cart_page.remove_button_click()
