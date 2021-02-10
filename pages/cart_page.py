@@ -41,3 +41,10 @@ class CartPage:
 
     def get_price_text(self):
         return self.get_price().text
+
+    def checkout(self):
+        return self.app.driver.find_element(*CartLocators.CHECKOUT)
+
+    def checkout_click(self):
+        logger.info("Пытаемся кликнуть на кнопку checkout")
+        self.checkout().click()

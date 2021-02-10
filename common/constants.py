@@ -51,3 +51,13 @@ class Product:
 
 class SauceLabs:
     TITLE = "Cross Browser Testing, Selenium Testing, Mobile Testing | Sauce Labs"
+
+
+class PersonalData:
+    FIRSTNAME = "ALEXANDER"
+    LASTNAME = "EVGRAFOV"
+    POSTAL_CODE = "603106"
+
+
+class CheckoutSubheader:
+    CHECKOUT = "Checkout: Your Information"

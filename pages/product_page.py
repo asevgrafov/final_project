@@ -46,3 +46,10 @@ class ProductPage:
     def remove_click(self):
         logger.info("Пытаемся кликнуть на кнопку remove")
         self.remove().click()
+
+    def cart_icon(self):
+        return self.app.driver.find_element(*ProductPageLocators.CART)
+
+    def cart_icon_click(self):
+        logger.info("Пытаемся кликнуть на иконку корзины")
+        self.cart_icon().click()

@@ -8,3 +8,4 @@ class ProductPageLocators:
     PRODUCT_PRICE = (By.XPATH, '//*[@class="inventory_details_price"]')
     ADD_TO_CART = (By.XPATH, '//*[@class="btn_primary btn_inventory"]')
     REMOVE = (By.XPATH, '//*[@class="btn_secondary btn_inventory"]')
+    CART = (By.XPATH, '//*[@class="shopping_cart_container"]')
