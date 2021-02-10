@@ -23,6 +23,17 @@ def auth(request, app):
     app.authorization.auth(username, password)
 
 
+@pytest.fixture(scope="function")
+def product_in_cart(request, app):
+    username = request.config.getoption("--username")
+    password = request.config.getoption("--password")
+    app.open_main_page()
+    app.authorization.auth(username, password)
+    app.main_page.move_to_product_click()
+    app.product_page.add_to_cart_click()
+    app.product_page.cart_icon_click()
+
+
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     outcome = yield
