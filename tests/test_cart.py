@@ -5,7 +5,7 @@ from common.constants import Cart, Product
 
 
 class TestCart:
-    @allure.story("Главная страница")
+    @allure.story("Cart")
     @allure.severity("minor")
     @pytest.mark.usefixtures("auth")
     def test_add_to_cart(self, app):
