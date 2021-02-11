@@ -64,3 +64,19 @@ class PersonalData:
 
 class CheckoutSubheader:
     CHECKOUT = "Checkout: Your Information"
+
+
+class Overview:
+    OVERVIEW = "Checkout: Overview"
+    PAYMENT_INFO = "SauceCard #31337"
+    SHIPPING_INFO = "FREE PONY EXPRESS DELIVERY!"
+
+
+class Finish:
+    FINISH = "Finish"
+    COMPLETE_HEADER = "THANK YOU FOR YOUR ORDER"
+    COMPLETE_TEXT = (
+        "Your order has been dispatched, and "
+        "will arrive just as fast as the pony can "
+        "get there!"
+    )
