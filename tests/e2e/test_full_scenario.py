@@ -7,6 +7,17 @@ class TestE2E:
     @allure.story("E2E")
     @allure.severity("critical")
     def test_full_scenario(self, app):
+        """
+        1. Авторизоваться
+        2. Перейти на карточку товара
+        3. Добавить товар в корзину
+        4. Перейти в корзину
+        5. Перейти к странице checkout
+        6. Заполнить все поля
+        7. Перейти к странице overview
+        8. Перейти к финишной странице
+        9. Проверить нахождение на финишной странице
+        """
         app.open_main_page()
         app.authorization.auth(
             username=Users.STANDARD_USERNAME, password=Users.PASSWORD
