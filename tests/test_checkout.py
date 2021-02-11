@@ -55,9 +55,8 @@ class TestCheckout:
         5. Перейти к странице checkout
         6. Проверить alert об обязательном поле lastname
         """
-        firstname = PersonalData.FIRSTNAME
         app.cart_page.checkout_click()
-        app.checkout_page.input_firstname(firstname)
+        app.checkout_page.input_firstname(firstname=PersonalData.FIRSTNAME)
         app.checkout_page.continue_click()
         assert app.checkout_page.error_text() == Alerts.LASTNAME_REQUIRED
         app.checkout_page.cancel_click()
@@ -75,11 +74,9 @@ class TestCheckout:
         5. Перейти к странице checkout
         6. Проверить alert об обязательном поле postal_code
         """
-        firstname = PersonalData.FIRSTNAME
-        lastname = PersonalData.LASTNAME
         app.cart_page.checkout_click()
-        app.checkout_page.input_firstname(firstname)
-        app.checkout_page.input_lastname(lastname)
+        app.checkout_page.input_firstname(firstname=PersonalData.FIRSTNAME)
+        app.checkout_page.input_lastname(lastname=PersonalData.LASTNAME)
         app.checkout_page.continue_click()
         assert app.checkout_page.error_text() == Alerts.POSTAL_CODE_REQUIRED
         app.checkout_page.cancel_click()

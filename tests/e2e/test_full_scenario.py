@@ -26,9 +26,11 @@ class TestE2E:
         app.product_page.add_to_cart_click()
         app.product_page.cart_icon_click()
         app.cart_page.checkout_click()
-        app.checkout_page.input_firstname(firstname=PersonalData.FIRSTNAME)
-        app.checkout_page.input_lastname(lastname=PersonalData.LASTNAME)
-        app.checkout_page.input_postal_code(postal_code=PersonalData.POSTAL_CODE)
+        app.checkout_page.input_all_value(
+            firstname=PersonalData.FIRSTNAME,
+            lastname=PersonalData.LASTNAME,
+            postal_code=PersonalData.POSTAL_CODE,
+        )
         app.checkout_page.continue_click()
         app.overview_page.finish_click()
         assert app.complete_page.get_subheader_text() == Finish.FINISH
