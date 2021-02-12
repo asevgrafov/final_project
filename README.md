@@ -1,5 +1,5 @@
 # final_project
-[![Build Status](https://travis-ci.com/travis-ci/docs-travis-ci-com.svg?branch=master)](https://travis-ci.com/travis-ci/docs-travis-ci-com)
+[![Build Status](https://www.travis-ci.com/github/asevgrafov/final_project)
 # Автотесты
 
 Selenium Python
