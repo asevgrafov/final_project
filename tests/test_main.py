@@ -86,3 +86,80 @@ class TestHeaderMain:
         """
         app.main_page.burger_button_click()
         app.main_page.reset_app_click()
+
+
+class TestFilterProducts:
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    @pytest.mark.parametrize(
+        "expected_result",
+        [
+            pytest.param(True, id="1. Filter AZ works correctly"),
+        ],
+    )
+    def test_az_filter(self, app, expected_result):
+        """
+        1. Авторизоваться
+        2. Выбрать фильтр A-Z
+        3. Сравнить название первого и второго товара
+        """
+        result = app.main_page.check_found_products_az()
+        assert result == expected_result
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    @pytest.mark.parametrize(
+        "expected_result",
+        [
+            pytest.param(True, id="2. Filter ZA works correctly"),
+        ],
+    )
+    def test_za_filter(self, app, expected_result):
+        """
+        1. Авторизоваться
+        2. Выбрать фильтр Z-A
+        3. Сравнить название первого и второго товара
+        """
+        app.main_page.select_filter_za()
+        result = app.main_page.check_found_products_za()
+        assert result == expected_result
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    @pytest.mark.parametrize(
+        "expected_result",
+        [
+            pytest.param(True, id="3. Filter Low-High works correctly"),
+        ],
+    )
+    def test_lh_filter(self, app, expected_result):
+        """
+        1. Авторизоваться
+        2. Выбрать фильтр Low-High
+        3. Сравнить цену первого и второго товара
+        """
+        app.main_page.select_filter_lh()
+        result = app.main_page.check_found_products_za()
+        assert result == expected_result
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.usefixtures("auth")
+    @pytest.mark.parametrize(
+        "expected_result",
+        [
+            pytest.param(True, id="4. Filter High-Low works correctly"),
+        ],
+    )
+    def test_hl_filter(self, app, expected_result):
+        """
+        1. Авторизоваться
+        2. Выбрать фильтр Low-High
+        3. Сравнить цену первого и второго товара
+        """
+        app.main_page.select_filter_hl()
+        result = app.main_page.check_found_products_za()
+        assert result == expected_result

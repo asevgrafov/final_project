@@ -80,3 +80,10 @@ class Finish:
         "will arrive just as fast as the pony can "
         "get there!"
     )
+
+
+class Filter:
+    AZ = "az"
+    ZA = "za"
+    LOHI = "lohi"
+    HILO = "hilo"
