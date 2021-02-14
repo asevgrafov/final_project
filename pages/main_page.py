@@ -1,3 +1,6 @@
+from selenium.webdriver.support.select import Select
+
+from common.constants import Filter
 from locators.main import (
     MainFooterLocators,
     MainHeaderLocators,
@@ -105,3 +108,55 @@ class MainPage:
     def move_to_product_click(self):
         logger.info("Пытаемся кликнуть по товару")
         self.move_to_product().click()
+
+    def find_products(self):
+        return self.app.driver.find_elements(*MainLocators.PRODUCTS_NAME)
+
+    def filter_list(self):
+        return self.app.driver.find_element(*MainLocators.FILTER)
+
+    def select_filter_za(self):
+        logger.info("Пытаемся выбрать фильтр ZA в выпадающем списке")
+        select = Select(self.filter_list())
+        select.select_by_value(Filter.ZA)
+
+    def check_found_products_az(self):
+        logger.info("Пытаемся найти товары на странице")
+        products = self.find_products()
+        if products[0].text <= products[1].text:
+            return True
+        return False
+
+    def check_found_products_za(self):
+        logger.info("Пытаемся найти товары на странице")
+        products = self.find_products()
+        if products[0].text >= products[1].text:
+            return True
+        return False
+
+    def check_products_price(self):
+        return self.app.driver.find_elements(*MainLocators.PRODUCTS_PRICE)
+
+    def select_filter_lh(self):
+        logger.info("Пытаемся выбрать фильтр Low-High в выпадающем списке")
+        select = Select(self.filter_list())
+        select.select_by_value(Filter.LOHI)
+
+    def select_filter_hl(self):
+        logger.info("Пытаемся выбрать фильтр High_low в выпадающем списке")
+        select = Select(self.filter_list())
+        select.select_by_value(Filter.HILO)
+
+    def check_found_product_price_lh(self):
+        logger.info("Пытаемся найти товары на странице")
+        products = self.check_products_price()
+        if products[0].text <= products[1].text:
+            return True
+        return False
+
+    def check_found_product_price_hl(self):
+        logger.info("Пытаемся найти товары на странице")
+        products = self.check_products_price()
+        if products[0].text >= products[1].text:
+            return True
+        return False
