@@ -121,18 +121,26 @@ class MainPage:
         select.select_by_value(Filter.ZA)
 
     def check_found_products_az(self):
+        """
+        Проверка сортировки A-Z
+        """
         logger.info("Пытаемся найти товары на странице")
         products = self.find_products()
-        if products[0].text <= products[1].text:
-            return True
-        return False
+        for i in range(1, len(products)):
+            if products[i - 1].text > products[i].text:
+                return False
+        return True
 
     def check_found_products_za(self):
+        """
+        Проверка сортировки Z-A
+        """
         logger.info("Пытаемся найти товары на странице")
         products = self.find_products()
-        if products[0].text >= products[1].text:
-            return True
-        return False
+        for i in range(1, len(products)):
+            if products[i - 1].text < products[i].text:
+                return False
+        return True
 
     def check_products_price(self):
         return self.app.driver.find_elements(*MainLocators.PRODUCTS_PRICE)
@@ -148,15 +156,31 @@ class MainPage:
         select.select_by_value(Filter.HILO)
 
     def check_found_product_price_lh(self):
+        """
+        Проверка сортировки Low-High
+        """
         logger.info("Пытаемся найти товары на странице")
         products = self.check_products_price()
-        if products[0].text <= products[1].text:
-            return True
-        return False
+        names = self.find_products()
+        for i in range(1, len(products)):
+            if (
+                products[i - 1].text > products[i].text
+                and names[i - 1].text > names[i].text
+            ):
+                return False
+        return True
 
     def check_found_product_price_hl(self):
+        """
+        Проверка сортировки High-Low
+        """
         logger.info("Пытаемся найти товары на странице")
         products = self.check_products_price()
-        if products[0].text >= products[1].text:
-            return True
-        return False
+        names = self.find_products()
+        for i in range(1, len(products)):
+            if (
+                products[i - 1].text < products[i].text
+                and names[i - 1].text < names[i].text
+            ):
+                return False
+        return True
