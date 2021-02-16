@@ -1,5 +1,5 @@
 # final_project
-[![Build Status](https://travis-ci.com/github/asevgrafov/final_project.svg?branch=master)](https://travis-ci.com/github/asevgrafov/final_project)
+[![Build Status](https://travis-ci.com/asevgrafov/final_project.svg?branch=master)](https://travis-ci.com/asevgrafov/final_project)
 # Автотесты
 
 Selenium Python
