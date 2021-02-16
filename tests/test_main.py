@@ -102,7 +102,7 @@ class TestFilterProducts:
         """
         1. Авторизоваться
         2. Выбрать фильтр A-Z
-        3. Сравнить название первого и второго товара
+        3. Сравнить название товаров попарно, начиная с первого и второго
         """
         result = app.main_page.check_found_products_az()
         assert result == expected_result
@@ -120,7 +120,7 @@ class TestFilterProducts:
         """
         1. Авторизоваться
         2. Выбрать фильтр Z-A
-        3. Сравнить название первого и второго товара
+        3. Сравнить название товаров попарно, начиная с первого и второго
         """
         app.main_page.select_filter_za()
         result = app.main_page.check_found_products_za()
@@ -139,10 +139,10 @@ class TestFilterProducts:
         """
         1. Авторизоваться
         2. Выбрать фильтр Low-High
-        3. Сравнить цену первого и второго товара
+        3. Сравнить цену товаров попарно, начиная с первого и второго
         """
         app.main_page.select_filter_lh()
-        result = app.main_page.check_found_products_za()
+        result = app.main_page.check_found_product_price_lh()
         assert result == expected_result
 
     @allure.story("Главная страница")
@@ -157,9 +157,9 @@ class TestFilterProducts:
     def test_hl_filter(self, app, expected_result):
         """
         1. Авторизоваться
-        2. Выбрать фильтр Low-High
-        3. Сравнить цену первого и второго товара
+        2. Выбрать фильтр High-Low
+        3. Сравнить цену товаров попарно, начиная с первого и второго
         """
         app.main_page.select_filter_hl()
-        result = app.main_page.check_found_products_za()
+        result = app.main_page.check_found_product_price_hl()
         assert result == expected_result
