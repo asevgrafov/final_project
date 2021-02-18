@@ -1,6 +1,7 @@
 import allure
 
-from common.constants import Users, PersonalData, Finish
+from common.constants import Users, Finish
+from models.fake_data import PersonalInfo
 
 
 class TestE2E:
@@ -18,6 +19,7 @@ class TestE2E:
         8. Перейти к финишной странице
         9. Проверить нахождение на финишной странице
         """
+        personal_data = PersonalInfo.random()
         app.open_main_page()
         app.authorization.auth(
             username=Users.STANDARD_USERNAME, password=Users.PASSWORD
@@ -27,9 +29,9 @@ class TestE2E:
         app.product_page.cart_icon_click()
         app.cart_page.checkout_click()
         app.checkout_page.input_all_value(
-            firstname=PersonalData.FIRSTNAME,
-            lastname=PersonalData.LASTNAME,
-            postal_code=PersonalData.POSTAL_CODE,
+            firstname=personal_data.firstname,
+            lastname=personal_data.lastname,
+            postal_code=personal_data.postal_code,
         )
         app.checkout_page.continue_click()
         app.overview_page.finish_click()

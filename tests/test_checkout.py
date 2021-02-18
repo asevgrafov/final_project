@@ -1,7 +1,8 @@
 import allure
 import pytest
 
-from common.constants import CheckoutSubheader, Alerts, PersonalData
+from common.constants import CheckoutSubheader, Alerts
+from models.fake_data import PersonalInfo
 
 
 class TestCheckout:
@@ -55,8 +56,9 @@ class TestCheckout:
         5. Перейти к странице checkout
         6. Проверить alert об обязательном поле lastname
         """
+        personal_data = PersonalInfo.random()
         app.cart_page.checkout_click()
-        app.checkout_page.input_firstname(firstname=PersonalData.FIRSTNAME)
+        app.checkout_page.input_firstname(firstname=personal_data.firstname)
         app.checkout_page.continue_click()
         assert app.checkout_page.error_text() == Alerts.LASTNAME_REQUIRED
         app.checkout_page.cancel_click()
@@ -74,9 +76,10 @@ class TestCheckout:
         5. Перейти к странице checkout
         6. Проверить alert об обязательном поле postal_code
         """
+        personal_data = PersonalInfo.random()
         app.cart_page.checkout_click()
-        app.checkout_page.input_firstname(firstname=PersonalData.FIRSTNAME)
-        app.checkout_page.input_lastname(lastname=PersonalData.LASTNAME)
+        app.checkout_page.input_firstname(firstname=personal_data.firstname)
+        app.checkout_page.input_lastname(lastname=personal_data.lastname)
         app.checkout_page.continue_click()
         assert app.checkout_page.error_text() == Alerts.POSTAL_CODE_REQUIRED
         app.checkout_page.cancel_click()
