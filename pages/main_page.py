@@ -1,3 +1,4 @@
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
 
 from common.constants import Filter
@@ -88,12 +89,39 @@ class MainPage:
         logger.info("Пытаемся кликнуть по logout")
         self.logout().click()
 
+    def products_in_cart(self):
+        return self.app.driver.find_element(*MainHeaderLocators.COUNT_PRODUCTS_IN_CART)
+
+    def products_in_cart_text(self):
+        return self.products_in_cart().text
+
     def reset_app(self):
         return self.app.driver.find_element(*BurgerButtonLocators.RESET_APP_STATE)
 
     def reset_app_click(self):
         logger.info("Пытаемся кликнуть по reset app state")
         self.reset_app().click()
+
+    def exit_button(self):
+        return self.app.driver.find_element(*BurgerButtonLocators.EXIT)
+
+    def exit_button_click(self):
+        logger.info("Пытаемся кликнуть по крестику в модалке")
+        self.exit_button().click()
+
+    def is_element_present(self):
+        """
+        Проверка наличия иконки количества товаров в корзине
+        на странице
+        """
+        logger.info(
+            "Проверяем есть ли на странице иконка " "количества товаров в корзине"
+        )
+        try:
+            self.products_in_cart()
+            return True
+        except NoSuchElementException:
+            return False
 
     def add_to_cart(self):
         return self.app.driver.find_element(*MainLocators.ADD_TO_CART)

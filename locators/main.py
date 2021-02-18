@@ -13,6 +13,10 @@ class MainHeaderLocators:
     BURGER_BUTTON = (By.XPATH, '//*[@class="bm-burger-button"]')
     SORT_CONTAINER = (By.XPATH, '//*[@class="product_sort_container"]')
     PRODUCT_LABEL = (By.XPATH, '//*[@class="product_label"]')
+    COUNT_PRODUCTS_IN_CART = (
+        By.XPATH,
+        '//*[@class="fa-layers-counter shopping_cart_badge"]',
+    )
 
 
 class BurgerButtonLocators:
@@ -20,6 +24,7 @@ class BurgerButtonLocators:
     ABOUT = (By.XPATH, '//*[@id="about_sidebar_link"]')
     LOGOUT = (By.XPATH, '//*[@id="logout_sidebar_link"]')
     RESET_APP_STATE = (By.XPATH, '//*[@id="reset_sidebar_link"]')
+    EXIT = (By.XPATH, '//*[@class="bm-cross-button"]')
 
 
 class MainLocators:

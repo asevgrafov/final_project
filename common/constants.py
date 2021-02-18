@@ -40,6 +40,7 @@ class MainHeader:
 class Cart:
     YOUR_CART = "Your Cart"
     REMOVE = "REMOVE"
+    PRODUCT_IN_CART = "1"
 
 
 class Product:
