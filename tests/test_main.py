@@ -1,6 +1,5 @@
 import allure
 import pytest
-
 from common.constants import MainFooter, Cart, MainHeader, SauceLabs, Title
 
 
@@ -77,15 +76,24 @@ class TestHeaderMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
     @pytest.mark.usefixtures("auth")
-    @pytest.mark.skip(reason="При клике на reset app state ничего не происходит")
     def test_move_to_reset_app(self, app):
         """
         1. Авторизоваться
-        2. Кликнуть по бургеру
-        3. Кликнуть по reset app state
+        2. Перейти к карточке товара
+        3. Добавить товар в корзину
+        4. Проверить счетчик товаров в корзине на иконке
+        5. Кликнуть по бургеру
+        6. Кликнуть по reset app state
+        7. Закрыть бургер
+        8. Проверить что иконки количества товаров нет на значке корзины
         """
+        app.main_page.move_to_product_click()
+        app.product_page.add_to_cart_click()
+        assert app.main_page.products_in_cart_text() == Cart.PRODUCT_IN_CART
         app.main_page.burger_button_click()
         app.main_page.reset_app_click()
+        app.main_page.all_items_click()
+        assert app.main_page.is_element_present() is False
 
 
 class TestFilterProducts:
