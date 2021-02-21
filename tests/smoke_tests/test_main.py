@@ -6,6 +6,7 @@ from common.constants import MainFooter, Cart, MainHeader, SauceLabs, Title
 class TestFooterMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_footer_data(self, app):
         """
@@ -21,6 +22,7 @@ class TestFooterMain:
 class TestHeaderMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_cart(self, app):
         """
@@ -33,6 +35,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_all_items(self, app):
         """
@@ -47,6 +50,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_about(self, app):
         """
@@ -61,6 +65,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_logout(self, app):
         """
@@ -75,6 +80,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_reset_app(self, app):
         """
@@ -99,6 +105,7 @@ class TestHeaderMain:
 class TestFilterProducts:
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",
@@ -117,6 +124,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",
@@ -136,6 +144,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",
@@ -155,6 +164,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",

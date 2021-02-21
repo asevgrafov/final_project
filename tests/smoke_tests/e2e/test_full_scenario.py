@@ -1,4 +1,5 @@
 import allure
+import pytest
 
 from common.constants import Users, Finish
 from models.fake_data import PersonalInfo
@@ -7,6 +8,7 @@ from models.fake_data import PersonalInfo
 class TestE2E:
     @allure.story("E2E")
     @allure.severity("critical")
+    @pytest.mark.smoke
     def test_full_scenario(self, app):
         """
         1. Авторизоваться
