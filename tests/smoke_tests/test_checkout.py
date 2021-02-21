@@ -8,6 +8,7 @@ from models.fake_data import PersonalInfo
 class TestCheckout:
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_checkout_page(self, app):
         """
@@ -28,6 +29,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("product_in_cart")
     def test_empty_firstname_field(self, app):
         """
@@ -46,6 +48,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("product_in_cart")
     def test_empty_lastname_field(self, app):
         """
@@ -66,6 +69,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("product_in_cart")
     def test_empty_postal_code_field(self, app):
         """

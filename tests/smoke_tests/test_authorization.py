@@ -10,6 +10,7 @@ class TestAuth:
 
     @allure.story("Авторизация")
     @allure.severity("critical")
+    @pytest.mark.smoke
     @pytest.mark.parametrize(
         "username, password",
         (
@@ -31,6 +32,7 @@ class TestAuth:
 
     @allure.story("Авторизация")
     @allure.severity("critical")
+    @pytest.mark.smoke
     @pytest.mark.parametrize(
         "username, password, alert",
         (

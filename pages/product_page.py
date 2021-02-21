@@ -1,4 +1,7 @@
 import logging
+
+from selenium.common.exceptions import NoSuchElementException
+
 from locators.product import ProductPageLocators
 
 logger = logging.getLogger()
@@ -53,3 +56,14 @@ class ProductPage:
     def cart_icon_click(self):
         logger.info("Пытаемся кликнуть на иконку корзины")
         self.cart_icon().click()
+
+    def is_remove_present(self):
+        """
+        Проверка наличия кнопки Remove на странице
+        """
+        logger.info("Проверяем есть ли на странице кнопка Remove")
+        try:
+            self.remove()
+            return True
+        except NoSuchElementException:
+            return False

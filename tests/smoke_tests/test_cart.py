@@ -7,6 +7,7 @@ from common.constants import Cart, Product
 class TestCart:
     @allure.story("Cart")
     @allure.severity("minor")
+    @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_add_to_cart(self, app):
         """
@@ -21,6 +22,8 @@ class TestCart:
         name = app.product_page.get_name_text()
         description = app.product_page.get_description_text()
         price = app.product_page.get_price_text()
+        assert app.main_page.is_element_present() is True
+        assert app.product_page.is_remove_present() is True
         app.product_page.cart_icon_click()
         assert name == app.cart_page.get_name_text()
         assert description == app.cart_page.get_description_text()
