@@ -1,5 +1,6 @@
 import allure
 import pytest
+from pytest_testrail.plugin import pytestrail
 
 from common.constants import CheckoutSubheader, Alerts
 from models.fake_data import PersonalInfo
@@ -8,6 +9,7 @@ from models.fake_data import PersonalInfo
 class TestCheckout:
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytestrail.case("C5")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_checkout_page(self, app):
@@ -29,6 +31,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytestrail.case("C6")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("product_in_cart")
     def test_empty_firstname_field(self, app):
@@ -48,6 +51,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytestrail.case("C7")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("product_in_cart")
     def test_empty_lastname_field(self, app):
@@ -57,7 +61,8 @@ class TestCheckout:
         3. Добавить товар в корзину
         4. Перейти в корзину
         5. Перейти к странице checkout
-        6. Проверить alert об обязательном поле lastname
+        6. Ввести валидные данные в поле firstname
+        7. Проверить alert об обязательном поле lastname
         """
         personal_data = PersonalInfo.random()
         app.cart_page.checkout_click()
@@ -69,6 +74,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
+    @pytestrail.case("C8")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("product_in_cart")
     def test_empty_postal_code_field(self, app):
@@ -78,7 +84,9 @@ class TestCheckout:
         3. Добавить товар в корзину
         4. Перейти в корзину
         5. Перейти к странице checkout
-        6. Проверить alert об обязательном поле postal_code
+        6. Ввести валидные данные в поле firstname
+        7. Ввести валидные данные в поле lastname
+        8. Проверить alert об обязательном поле postal_code
         """
         personal_data = PersonalInfo.random()
         app.cart_page.checkout_click()

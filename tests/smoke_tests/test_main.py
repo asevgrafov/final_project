@@ -1,11 +1,14 @@
 import allure
 import pytest
+from pytest_testrail.plugin import pytestrail
+
 from common.constants import MainFooter, Cart, MainHeader, SauceLabs, Title
 
 
 class TestFooterMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C9")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_footer_data(self, app):
@@ -22,19 +25,7 @@ class TestFooterMain:
 class TestHeaderMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.smoke
-    @pytest.mark.usefixtures("auth")
-    def test_move_to_cart(self, app):
-        """
-        1. Авторизоваться
-        2. Перейти в корзину
-        3. Проверить текст в subheader'e
-        """
-        app.main_page.cart_icon_click()
-        assert app.cart_page.subheader_text() == Cart.YOUR_CART
-
-    @allure.story("Главная страница")
-    @allure.severity("minor")
+    @pytestrail.case("C11")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_all_items(self, app):
@@ -50,6 +41,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C12")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_about(self, app):
@@ -57,7 +49,7 @@ class TestHeaderMain:
         1. Авторизоваться
         2. Кликнуть по бургеру
         3. Кликнуть по about
-        4. Проверить Title?
+        4. Проверить Title
         """
         app.main_page.burger_button_click()
         app.main_page.about_click()
@@ -65,6 +57,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C13")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_logout(self, app):
@@ -72,7 +65,7 @@ class TestHeaderMain:
         1. Авторизоваться
         2. Кликнуть по бургеру
         3. Кликнуть по logout
-        4. Проверить Title?
+        4. Проверить Title
         """
         app.main_page.burger_button_click()
         app.main_page.logout_click()
@@ -80,6 +73,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C14")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_move_to_reset_app(self, app):
@@ -105,6 +99,7 @@ class TestHeaderMain:
 class TestFilterProducts:
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C15")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
@@ -124,6 +119,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C16")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
@@ -144,6 +140,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C17")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
@@ -164,6 +161,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytestrail.case("C18")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(

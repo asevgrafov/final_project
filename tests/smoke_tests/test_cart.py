@@ -1,5 +1,6 @@
 import allure
 import pytest
+from pytest_testrail.plugin import pytestrail
 
 from common.constants import Cart, Product
 
@@ -7,6 +8,21 @@ from common.constants import Cart, Product
 class TestCart:
     @allure.story("Cart")
     @allure.severity("minor")
+    @pytestrail.case("C10")
+    @pytest.mark.smoke
+    @pytest.mark.usefixtures("auth")
+    def test_move_to_cart(self, app):
+        """
+        1. Авторизоваться
+        2. Перейти в корзину
+        3. Проверить текст в subheader'e
+        """
+        app.main_page.cart_icon_click()
+        assert app.cart_page.subheader_text() == Cart.YOUR_CART
+
+    @allure.story("Cart")
+    @allure.severity("minor")
+    @pytestrail.case("C4")
     @pytest.mark.smoke
     @pytest.mark.usefixtures("auth")
     def test_add_to_cart(self, app):
@@ -14,8 +30,9 @@ class TestCart:
         1. Авторизоваться
         2. Перейти на карточку товара
         3. Добавить товар в корзину
-        4. Перейти в корзину
-        5. Проверить name, description, price и наличие кнопки remove
+        4. Проверить наличие кнопки Remove и иконки количества товаров в корзине
+        5. Перейти в корзину
+        6. Проверить name, description, price и наличие кнопки remove
         """
         app.main_page.move_to_product_click()
         app.product_page.add_to_cart_click()

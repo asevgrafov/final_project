@@ -1,5 +1,6 @@
 import allure
 import pytest
+from pytest_testrail.plugin import pytestrail
 
 from common.constants import Users, Title, Alerts
 from models.fake_data import UserData
@@ -10,6 +11,7 @@ class TestAuth:
 
     @allure.story("Авторизация")
     @allure.severity("critical")
+    @pytestrail.case("C1")
     @pytest.mark.smoke
     @pytest.mark.parametrize(
         "username, password",
@@ -32,6 +34,7 @@ class TestAuth:
 
     @allure.story("Авторизация")
     @allure.severity("critical")
+    @pytestrail.case("C2")
     @pytest.mark.smoke
     @pytest.mark.parametrize(
         "username, password, alert",
