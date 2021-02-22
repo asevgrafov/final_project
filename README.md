@@ -1,5 +1,5 @@
 # final_project
-[![Build Status](https://travis-ci.com/asevgrafov/final_project.svg?branch=main)](https://travis-ci.com/asevgrafov/final_project)
+[![Build Status](https://travis-ci.org/asevgrafov/final_project.svg?branch=main)](https://travis-ci.org/asevgrafov/final_project)
 # Автотесты
 
 Selenium Python
@@ -62,10 +62,11 @@ C помощью scoop установить Allure:
 
     allure serve <dir_name>
 
-## Отчёты в pytest-html
+## Testrail
 
-### Установка
 
- `pip install pytest-html`
+https://finalproject2021.testrail.io/index.php?/projects/overview/1
 
->доступно с Python >=3.6 или PyPy3
+## Запуск
+
+    pytest --testrail --tr-config=testrail.cfg
