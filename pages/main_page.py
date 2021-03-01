@@ -27,6 +27,17 @@ class MainPage:
     def twitter_text(self):
         return self.twitter_icon().text
 
+    def twitter_is_visible(self):
+        """
+        Проверка наличия иконки twitter на странице
+        """
+        logger.info("Проверяем есть ли на странице иконка twitter")
+        try:
+            self.twitter_icon()
+            return True
+        except NoSuchElementException:
+            return False
+
     def facebook_icon(self):
         logger.info("Пытаемся найти иконку Facebook")
         return self.app.driver.find_element(*MainFooterLocators.FACEBOOK)
@@ -34,12 +45,34 @@ class MainPage:
     def facebook_text(self):
         return self.facebook_icon().text
 
+    def facebook_is_visible(self):
+        """
+        Проверка наличия иконки facebook на странице
+        """
+        logger.info("Проверяем есть ли на странице иконка facebook")
+        try:
+            self.facebook_icon()
+            return True
+        except NoSuchElementException:
+            return False
+
     def linkedin_icon(self):
         logger.info("Пытаемся найти иконку LinkedIn")
         return self.app.driver.find_element(*MainFooterLocators.LINKEDIN)
 
     def linkedin_text(self):
         return self.linkedin_icon().text
+
+    def linkedin_is_visible(self):
+        """
+        Проверка наличия иконки linkedin на странице
+        """
+        logger.info("Проверяем есть ли на странице иконка linkedin")
+        try:
+            self.linkedin_icon()
+            return True
+        except NoSuchElementException:
+            return False
 
     def footer_copy(self):
         logger.info("Пытаемся найти иконку Footer_copy")

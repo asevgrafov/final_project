@@ -29,7 +29,7 @@ class MainFooter:
     FACEBOOK = "Facebook"
     LINKEDIN = "LinkedIn"
     FOOTER_COPY = (
-        "© 2020 Sauce Labs. All Rights Reserved. " "Terms of Service | Privacy Policy"
+        "© 2021 Sauce Labs. All Rights Reserved. " "Terms of Service | Privacy Policy"
     )
 
 

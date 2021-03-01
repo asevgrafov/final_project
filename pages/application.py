@@ -1,6 +1,7 @@
 from selenium import webdriver
 import logging
-from common.logger import setup
+
+# from common.logger import setup
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from pages.authorization_page import AuthorizationPage
@@ -17,8 +18,8 @@ logger = logging.getLogger()
 
 class Application:
     def __init__(self, headless, url):
-        setup("INFO")
-        logger.setLevel("INFO")
+        # setup("INFO")
+        # logger.setLevel("INFO")
         options: Options = Options()
         if headless:
             options.add_argument("--headless")
