@@ -217,6 +217,26 @@ class MainPage:
         logger.info("Пытаемся найти товары на странице")
         return self.app.driver.find_elements(*MainLocators.PRODUCTS_NAME)
 
+    def find_add_to_cart_buttons(self):
+        logger.info("Пытаемся найти кнопки Add to cart на главной странице")
+        return self.app.driver.find_elements(*MainLocators.ADD_TO_CART)
+
+    def click_add_to_cart_buttons(self):
+        logger.info("Пытаемся кликнуть на кнопки Add to cart")
+        add_button = self.find_add_to_cart_buttons()
+        for i in range(0, len(add_button)):
+            add_button[i].click()
+
+    def find_remove_buttons(self):
+        logger.info("Пытаемся найти кнопки Remove на главной странице")
+        return self.app.driver.find_elements(*MainLocators.REMOVE)
+
+    def click_remove_buttons(self):
+        logger.info("Пытаемся кликнуть на кнопки Add to cart")
+        remove_button = self.find_remove_buttons()
+        for i in range(0, len(remove_button)):
+            remove_button[i].click()
+
     def filter_list(self):
         return self.app.driver.find_element(*MainLocators.FILTER)
 
