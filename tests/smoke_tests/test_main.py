@@ -262,3 +262,19 @@ class TestFilterProducts:
         app.main_page.select_filter_hl()
         result = app.main_page.check_found_product_price_hl()
         assert result == expected_result
+
+
+class TestItemsPresent:
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytestrail.case("C22")
+    @pytest.mark.smoke
+    @pytest.mark.regression
+    @pytest.mark.usefixtures("auth")
+    def test_items_present(self, app):
+        """
+        1. Авторизоваться
+        2. Проверить наличие продуктов на странице
+        """
+        products = app.main_page.find_products()
+        assert len(products) > 0

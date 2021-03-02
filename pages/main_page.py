@@ -214,6 +214,7 @@ class MainPage:
         self.move_to_product().click()
 
     def find_products(self):
+        logger.info("Пытаемся найти товары на странице")
         return self.app.driver.find_elements(*MainLocators.PRODUCTS_NAME)
 
     def filter_list(self):
