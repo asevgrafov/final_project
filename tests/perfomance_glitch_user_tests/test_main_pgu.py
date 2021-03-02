@@ -245,3 +245,45 @@ class TestFilterProducts:
         app.main_page.select_filter_hl()
         result = app.main_page.check_found_product_price_hl()
         assert result == expected_result
+
+
+class TestItemsPresent:
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.pgu
+    @pytest.mark.regression
+    @pytest.mark.usefixtures("auth_pg")
+    def test_items_present(self, app):
+        """
+        1. Авторизоваться
+        2. Проверить наличие продуктов на странице
+        """
+        products = app.main_page.find_products()
+        assert len(products) > 0
+
+
+class TestAddAndRemoveToCart:
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.pgu
+    @pytest.mark.regression
+    @pytest.mark.usefixtures("auth_pg")
+    def test_add_and_remove_products(self, app):
+        """
+        1. Авторизоваться
+        2. Добавить товары в корзину
+        3. Проверить наличие кнопки Remove, иконки количества товаров в корзине
+        и количество добавленных товаров в корзину
+        4. Убрать товары из корзины
+        5. Проверить наличие кнопки Add to cart и иконки количества товаров в корзине
+        """
+        app.main_page.click_add_to_cart_buttons()
+        remove_buttons = app.main_page.find_remove_buttons()
+        product_in_cart = app.main_page.products_in_cart_text()
+        assert app.main_page.is_element_present() is True
+        assert len(remove_buttons) > 0
+        assert str(len(remove_buttons)) == product_in_cart
+        app.main_page.click_remove_buttons()
+        add_buttons = app.main_page.find_add_to_cart_buttons()
+        assert len(add_buttons) > 0
+        assert app.main_page.is_element_present() is False
