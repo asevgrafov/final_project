@@ -1,6 +1,5 @@
 import allure
 import pytest
-from pytest_testrail.plugin import pytestrail
 
 from common.constants import CheckoutSubheader, Alerts
 from models.fake_data import PersonalInfo
@@ -9,10 +8,8 @@ from models.fake_data import PersonalInfo
 class TestCheckout:
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C5")
-    @pytest.mark.smoke
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_checkout_page(self, app):
         """
         1. Авторизоваться
@@ -32,10 +29,8 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C6")
-    @pytest.mark.smoke
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("product_in_cart")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("product_in_cart_pu")
     def test_empty_firstname_field(self, app):
         """
         1. Авторизоваться
@@ -53,10 +48,8 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C7")
-    @pytest.mark.smoke
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("product_in_cart")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("product_in_cart_pu")
     def test_empty_lastname_field(self, app):
         """
         1. Авторизоваться
@@ -77,10 +70,8 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C8")
-    @pytest.mark.smoke
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("product_in_cart")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("product_in_cart_pu")
     def test_empty_postal_code_field(self, app):
         """
         1. Авторизоваться

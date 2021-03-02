@@ -10,6 +10,7 @@ class TestFooterMain:
     @allure.severity("minor")
     @pytestrail.case("C9")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_footer_data(self, app):
         """
@@ -29,6 +30,7 @@ class TestFooterMain:
     @allure.severity("minor")
     @pytestrail.case("C19")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_twitter_click(self, app):
         """
@@ -51,6 +53,7 @@ class TestFooterMain:
     @allure.severity("minor")
     @pytestrail.case("C20")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_facebook_click(self, app):
         """
@@ -74,6 +77,7 @@ class TestFooterMain:
     @pytest.mark.skip(reason="Linkedin заблокирован в России")
     @pytestrail.case("C21")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_linkedin_click(self, app):
         """
@@ -98,6 +102,7 @@ class TestHeaderMain:
     @allure.severity("minor")
     @pytestrail.case("C11")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_move_to_all_items(self, app):
         """
@@ -114,6 +119,7 @@ class TestHeaderMain:
     @allure.severity("minor")
     @pytestrail.case("C12")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_move_to_about(self, app):
         """
@@ -130,6 +136,7 @@ class TestHeaderMain:
     @allure.severity("minor")
     @pytestrail.case("C13")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_move_to_logout(self, app):
         """
@@ -146,6 +153,7 @@ class TestHeaderMain:
     @allure.severity("minor")
     @pytestrail.case("C14")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_move_to_reset_app(self, app):
         """
@@ -172,6 +180,7 @@ class TestFilterProducts:
     @allure.severity("minor")
     @pytestrail.case("C15")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",
@@ -192,6 +201,7 @@ class TestFilterProducts:
     @allure.severity("minor")
     @pytestrail.case("C16")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",
@@ -213,6 +223,7 @@ class TestFilterProducts:
     @allure.severity("minor")
     @pytestrail.case("C17")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",
@@ -234,6 +245,7 @@ class TestFilterProducts:
     @allure.severity("minor")
     @pytestrail.case("C18")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     @pytest.mark.parametrize(
         "expected_result",

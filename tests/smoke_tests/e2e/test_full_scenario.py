@@ -11,6 +11,7 @@ class TestE2E:
     @allure.severity("critical")
     @pytestrail.case("C3")
     @pytest.mark.smoke
+    @pytest.mark.regression
     def test_full_scenario(self, app):
         """
         1. Авторизоваться

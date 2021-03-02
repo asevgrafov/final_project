@@ -1,6 +1,5 @@
 import allure
 import pytest
-from pytest_testrail.plugin import pytestrail
 
 from common.constants import Cart, Product
 
@@ -8,10 +7,8 @@ from common.constants import Cart, Product
 class TestCart:
     @allure.story("Cart")
     @allure.severity("minor")
-    @pytestrail.case("C10")
-    @pytest.mark.smoke
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_move_to_cart(self, app):
         """
         1. Авторизоваться
@@ -23,10 +20,8 @@ class TestCart:
 
     @allure.story("Cart")
     @allure.severity("minor")
-    @pytestrail.case("C4")
-    @pytest.mark.smoke
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_add_to_cart(self, app):
         """
         1. Авторизоваться

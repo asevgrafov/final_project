@@ -8,8 +8,7 @@ from models.fake_data import PersonalInfo
 class TestE2E:
     @allure.story("E2E")
     @allure.severity("critical")
-    @pytest.mark.pgu
-    @pytest.mark.regression
+    @pytest.mark.pu
     def test_full_scenario(self, app):
         """
         1. Авторизоваться
