@@ -3,8 +3,14 @@ from selenium.webdriver.common.by import By
 
 class MainFooterLocators:
     TWITTER = (By.XPATH, '//*[@class="social_twitter"]')
+    TWITTER_HREF = (By.XPATH, '//*[@href="https://twitter.com/saucelabs"]')
     FACEBOOK = (By.XPATH, '//*[@class="social_facebook"]')
+    FACEBOOK_HREF = (By.XPATH, '//*[@href="https://www.facebook.com/saucelabs"]')
     LINKEDIN = (By.XPATH, '//*[@class="social_linkedin"]')
+    LINKEDIN_HREF = (
+        By.XPATH,
+        '//*[@href="https://www.linkedin.com/company/sauce-labs/"]',
+    )
     FOOTER_COPY = (By.XPATH, '//*[@class="footer_copy"]')
 
 

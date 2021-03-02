@@ -24,8 +24,35 @@ class MainPage:
         logger.info("Пытаемся найти иконку Twitter")
         return self.app.driver.find_element(*MainFooterLocators.TWITTER)
 
-    def twitter_text(self):
-        return self.twitter_icon().text
+    def twitter_href(self):
+        return self.app.driver.find_element(*MainFooterLocators.TWITTER_HREF)
+
+    def twitter_href_text(self):
+        logger.info("Пытаемся забрать текст из аттрибута href")
+        return self.twitter_href().get_attribute("href")
+
+    def twitter_href_click(self):
+        logger.info("Пытаемся кликнуть на иконку twitter")
+        self.twitter_href().click()
+
+    def switch_browser_tab(self):
+        logger.info("Пытаемся переключить вкладку в браузере на вторую")
+        window_after = self.app.driver.window_handles[1]
+        self.app.driver.switch_to.window(window_after)
+
+    def return_old_tab(self):
+        logger.info("Пытаемся вернуться на первую вкладку в браузере")
+        window_before = self.app.driver.window_handles[0]
+        self.app.driver.switch_to.window(window_before)
+
+    def close_current_tab(self):
+        logger.info("Пытаемся закрыть текущую вкладку в браузере")
+        self.app.driver.close()
+
+    def get_current_url(self):
+        logger.info("Пытаемся забрать URL страницы, на которой находимся")
+        self.app.driver.implicitly_wait(10)
+        return self.app.driver.current_url
 
     def twitter_is_visible(self):
         """
@@ -42,8 +69,16 @@ class MainPage:
         logger.info("Пытаемся найти иконку Facebook")
         return self.app.driver.find_element(*MainFooterLocators.FACEBOOK)
 
-    def facebook_text(self):
-        return self.facebook_icon().text
+    def facebook_href(self):
+        return self.app.driver.find_element(*MainFooterLocators.FACEBOOK_HREF)
+
+    def facebook_href_text(self):
+        logger.info("Пытаемся забрать текст из аттрибута href")
+        return self.facebook_href().get_attribute("href")
+
+    def facebook_href_click(self):
+        logger.info("Пытаемся кликнуть на иконку facebook")
+        self.facebook_href().click()
 
     def facebook_is_visible(self):
         """
@@ -60,8 +95,16 @@ class MainPage:
         logger.info("Пытаемся найти иконку LinkedIn")
         return self.app.driver.find_element(*MainFooterLocators.LINKEDIN)
 
-    def linkedin_text(self):
-        return self.linkedin_icon().text
+    def linkedin_href(self):
+        return self.app.driver.find_element(*MainFooterLocators.LINKEDIN_HREF)
+
+    def linkedin_href_text(self):
+        logger.info("Пытаемся забрать текст из аттрибута href")
+        return self.linkedin_href().get_attribute("href")
+
+    def linkedin_href_click(self):
+        logger.info("Пытаемся кликнуть на иконку linkedin")
+        self.linkedin_href().click()
 
     def linkedin_is_visible(self):
         """
