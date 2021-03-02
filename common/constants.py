@@ -26,8 +26,11 @@ class Alerts:
 
 class MainFooter:
     TWITTER = "Twitter"
+    TWITTER_HREF = "https://twitter.com/saucelabs"
     FACEBOOK = "Facebook"
+    FACEBOOK_HREF = "https://www.facebook.com/saucelabs"
     LINKEDIN = "LinkedIn"
+    LINKEDIN_HREF = "https://www.linkedin.com/company/sauce-labs/"
     FOOTER_COPY = (
         "© 2021 Sauce Labs. All Rights Reserved. " "Terms of Service | Privacy Policy"
     )

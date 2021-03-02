@@ -15,11 +15,82 @@ class TestFooterMain:
         """
         1. Авторизоваться
         2. Проверить наличие иконок в футере
+        3. Проверить ссылки в href
         """
         assert app.main_page.twitter_is_visible() is True
+        assert app.main_page.twitter_href_text() == MainFooter.TWITTER_HREF
         assert app.main_page.facebook_is_visible() is True
+        assert app.main_page.facebook_href_text() == MainFooter.FACEBOOK_HREF
         assert app.main_page.linkedin_is_visible() is True
+        assert app.main_page.linkedin_href_text() == MainFooter.LINKEDIN_HREF
         assert app.main_page.footer_copy_text() == MainFooter.FOOTER_COPY
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytestrail.case("C19")
+    @pytest.mark.smoke
+    @pytest.mark.usefixtures("auth")
+    def test_twitter_click(self, app):
+        """
+        1. Авторизоваться
+        2. Кликнуть по иконке twitter
+        3. Переключить вкладку в браузере
+        4. Записать текущий URL
+        5. Закрыть текущую вкладку браузера
+        6. Сравнить записанный URL со ссылкой в href
+        """
+        href = app.main_page.twitter_href_text()
+        app.main_page.twitter_href_click()
+        app.main_page.switch_browser_tab()
+        url = app.main_page.get_current_url()
+        app.main_page.close_current_tab()
+        app.main_page.return_old_tab()
+        assert href == url
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytestrail.case("C20")
+    @pytest.mark.smoke
+    @pytest.mark.usefixtures("auth")
+    def test_facebook_click(self, app):
+        """
+        1. Авторизоваться
+        2. Кликнуть по иконке facebook
+        3. Переключить вкладку в браузере
+        4. Записать текущий URL
+        5. Закрыть текущую вкладку браузера
+        6. Сравнить записанный URL со ссылкой в href
+        """
+        href = app.main_page.facebook_href_text()
+        app.main_page.facebook_href_click()
+        app.main_page.switch_browser_tab()
+        url = app.main_page.get_current_url()
+        app.main_page.close_current_tab()
+        app.main_page.return_old_tab()
+        assert href == url
+
+    @allure.story("Главная страница")
+    @allure.severity("minor")
+    @pytest.mark.skip(reason="Linkedin заблокирован в России")
+    @pytestrail.case("C21")
+    @pytest.mark.smoke
+    @pytest.mark.usefixtures("auth")
+    def test_linkedin_click(self, app):
+        """
+        1. Авторизоваться
+        2. Кликнуть по иконке linkedin
+        3. Переключить вкладку в браузере
+        4. Записать текущий URL
+        5. Закрыть текущую вкладку браузера
+        6. Сравнить записанный URL со ссылкой в href
+        """
+        href = app.main_page.linkedin_href_text()
+        app.main_page.linkedin_href_click()
+        app.main_page.switch_browser_tab()
+        url = app.main_page.get_current_url()
+        app.main_page.close_current_tab()
+        app.main_page.return_old_tab()
+        assert href == url
 
 
 class TestHeaderMain:
