@@ -13,6 +13,7 @@ class TestAuth:
     @allure.severity("critical")
     @pytestrail.case("C1")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.parametrize(
         "username, password",
         (
@@ -36,6 +37,7 @@ class TestAuth:
     @allure.severity("critical")
     @pytestrail.case("C2")
     @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.parametrize(
         "username, password, alert",
         (

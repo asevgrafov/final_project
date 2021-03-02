@@ -30,6 +30,14 @@ def auth_pg(request, app):
 
 
 @pytest.fixture(scope="function")
+def auth_pu(request, app):
+    username = request.config.getoption("--username_pu")
+    password = request.config.getoption("--password")
+    app.open_main_page()
+    app.authorization.auth(username, password)
+
+
+@pytest.fixture(scope="function")
 def product_in_cart(request, app):
     username = request.config.getoption("--username")
     password = request.config.getoption("--password")
@@ -43,6 +51,17 @@ def product_in_cart(request, app):
 @pytest.fixture(scope="function")
 def product_in_cart_pg(request, app):
     username = request.config.getoption("--username_pg")
+    password = request.config.getoption("--password")
+    app.open_main_page()
+    app.authorization.auth(username, password)
+    app.main_page.move_to_product_click()
+    app.product_page.add_to_cart_click()
+    app.product_page.cart_icon_click()
+
+
+@pytest.fixture(scope="function")
+def product_in_cart_pu(request, app):
+    username = request.config.getoption("--username_pu")
     password = request.config.getoption("--password")
     app.open_main_page()
     app.authorization.auth(username, password)
@@ -102,5 +121,11 @@ def pytest_addoption(parser):
         "--username_pg",
         action="store",
         default="performance_glitch_user",
+        help="launching browser without gui",
+    ),
+    parser.addoption(
+        "--username_pu",
+        action="store",
+        default="problem_user",
         help="launching browser without gui",
     ),

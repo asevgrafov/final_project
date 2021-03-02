@@ -7,13 +7,13 @@ from common.constants import MainFooter, Cart, MainHeader, SauceLabs, Title
 class TestFooterMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_footer_data(self, app):
         """
         1. Авторизоваться
         2. Проверить наличие иконок в футере
+        3. Проверить ссылки в href
         """
         assert app.main_page.twitter_is_visible() is True
         assert app.main_page.twitter_href_text() == MainFooter.TWITTER_HREF
@@ -25,8 +25,8 @@ class TestFooterMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_twitter_click(self, app):
         """
         1. Авторизоваться
@@ -46,8 +46,8 @@ class TestFooterMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_facebook_click(self, app):
         """
         1. Авторизоваться
@@ -68,8 +68,8 @@ class TestFooterMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
     @pytest.mark.skip(reason="Linkedin заблокирован в России")
-    @pytest.mark.pgu
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_linkedin_click(self, app):
         """
         1. Авторизоваться
@@ -91,9 +91,8 @@ class TestFooterMain:
 class TestHeaderMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_move_to_all_items(self, app):
         """
         1. Авторизоваться
@@ -107,9 +106,8 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_move_to_about(self, app):
         """
         1. Авторизоваться
@@ -123,9 +121,8 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_move_to_logout(self, app):
         """
         1. Авторизоваться
@@ -139,9 +136,8 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     def test_move_to_reset_app(self, app):
         """
         1. Авторизоваться
@@ -165,9 +161,8 @@ class TestHeaderMain:
 class TestFilterProducts:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     @pytest.mark.parametrize(
         "expected_result",
         [
@@ -185,9 +180,8 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     @pytest.mark.parametrize(
         "expected_result",
         [
@@ -206,9 +200,8 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     @pytest.mark.parametrize(
         "expected_result",
         [
@@ -227,9 +220,8 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytest.mark.pgu
-    @pytest.mark.regression
-    @pytest.mark.usefixtures("auth_pg")
+    @pytest.mark.pu
+    @pytest.mark.usefixtures("auth_pu")
     @pytest.mark.parametrize(
         "expected_result",
         [
