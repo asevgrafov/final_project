@@ -217,6 +217,17 @@ class MainPage:
         logger.info("Пытаемся найти товары на странице")
         return self.app.driver.find_elements(*MainLocators.PRODUCTS_NAME)
 
+    def is_products_present(self):
+        """
+        Проверка наличия товаров на странице
+        """
+        logger.info("Проверяем есть ли на странице товары")
+        try:
+            self.find_products()
+            return True
+        except NoSuchElementException:
+            return False
+
     def find_add_to_cart_buttons(self):
         logger.info("Пытаемся найти кнопки Add to cart на главной странице")
         return self.app.driver.find_elements(*MainLocators.ADD_TO_CART)

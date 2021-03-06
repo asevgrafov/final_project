@@ -48,3 +48,10 @@ class CartPage:
     def checkout_click(self):
         logger.info("Пытаемся кликнуть на кнопку checkout")
         self.checkout().click()
+
+    def continue_shopping(self):
+        return self.app.driver.find_element(*CartLocators.CONTINUE_SHOPPING)
+
+    def continue_shopping_click(self):
+        logger.info("Пытаемся кликнуть на кнопку continue shopping")
+        self.continue_shopping().click()

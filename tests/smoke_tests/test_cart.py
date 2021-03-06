@@ -49,3 +49,26 @@ class TestCart:
         assert price == Product.PRICE
         assert app.cart_page.remove_button_text() == Cart.REMOVE
         app.cart_page.remove_button_click()
+
+    @allure.story("Cart")
+    @allure.severity("minor")
+    @pytestrail.case("")
+    @pytest.mark.smoke
+    @pytest.mark.regression
+    @pytest.mark.usefixtures("auth")
+    def test_continue_shopping(self, app):
+        """
+        1. Авторизоваться
+        2. Перейти на карточку товара
+        3. Добавить товар в корзину
+        4. Перейти в корзину
+        5. Кликнуть на кнопку Continue shopping
+        6. Проверить нахождение на главной странице
+        """
+        app.main_page.move_to_product_click()
+        app.product_page.add_to_cart_click()
+        app.product_page.cart_icon_click()
+        app.cart_page.continue_shopping_click()
+        assert app.main_page.is_products_present() is True
+        app.main_page.cart_icon_click()
+        app.cart_page.remove_button_click()

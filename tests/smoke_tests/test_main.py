@@ -51,6 +51,7 @@ class TestFooterMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.skip(reason="Не всегда открывает ссылку однообразно")
     @pytestrail.case("C20")
     @pytest.mark.smoke
     @pytest.mark.regression
