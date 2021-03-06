@@ -74,6 +74,8 @@ class Overview:
     OVERVIEW = "Checkout: Overview"
     PAYMENT_INFO = "SauceCard #31337"
     SHIPPING_INFO = "FREE PONY EXPRESS DELIVERY!"
+    TAX = "0.80"
+    TOTAL = "10.79"
 
 
 class Finish:

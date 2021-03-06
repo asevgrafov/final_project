@@ -10,3 +10,6 @@ class OverviewPageLocators:
     SHIPPING_INFO = (By.XPATH, '//*[@class="summary_value_label"]')
     FINISH = (By.XPATH, '//*[@class="btn_action cart_button"]')
     CANCEL = (By.XPATH, '//*[@class="cart_cancel_link btn_secondary"]')
+    ITEM_TOTAL = (By.XPATH, '//*[@class="summary_subtotal_label"]')
+    TAX = (By.XPATH, '//*[@class="summary_tax_label"]')
+    TOTAL = (By.XPATH, '//*[@class="summary_total_label"]')

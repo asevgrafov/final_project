@@ -1,3 +1,5 @@
+from selenium.common.exceptions import NoSuchElementException
+
 from locators.cart import CartLocators
 import logging
 
@@ -23,6 +25,17 @@ class CartPage:
 
     def remove_button_text(self):
         return self.remove_button().text
+
+    def remove_is_visible(self):
+        """
+        Проверка наличия кнопки Remove на странице
+        """
+        logger.info("Проверяем есть ли на странице кнопка Remove")
+        try:
+            self.remove_button()
+            return True
+        except NoSuchElementException:
+            return False
 
     def get_name(self):
         return self.app.driver.find_element(*CartLocators.ITEM_NAME)
