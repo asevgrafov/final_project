@@ -209,6 +209,9 @@ class MainPage:
     def move_to_product(self):
         return self.app.driver.find_element(*MainLocators.PRODUCT)
 
+    def get_product_name(self):
+        return self.move_to_product().text
+
     def move_to_product_click(self):
         logger.info("Пытаемся кликнуть по товару")
         self.move_to_product().click()
@@ -243,7 +246,7 @@ class MainPage:
         return self.app.driver.find_elements(*MainLocators.REMOVE)
 
     def click_remove_buttons(self):
-        logger.info("Пытаемся кликнуть на кнопки Add to cart")
+        logger.info("Пытаемся кликнуть на кнопки Remove")
         remove_button = self.find_remove_buttons()
         for i in range(0, len(remove_button)):
             remove_button[i].click()

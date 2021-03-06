@@ -56,6 +56,29 @@ class TestCart:
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
+    def test_remove_from_cart(self, app):
+        """
+        1. Авторизоваться
+        2. Перейти на карточку товара
+        3. Добавить товар в корзину
+        4. Перейти в корзину
+        5. Проверить наличие кнопки remove
+        6. Кликнуть по кнопке Remove
+        7. Проверить отсутствие кнопки remove
+        """
+        app.main_page.move_to_product_click()
+        app.product_page.add_to_cart_click()
+        app.product_page.cart_icon_click()
+        assert app.cart_page.remove_is_visible() is True
+        app.cart_page.remove_button_click()
+        assert app.cart_page.remove_is_visible() is False
+
+    @allure.story("Cart")
+    @allure.severity("minor")
+    @pytestrail.case("")
+    @pytest.mark.smoke
+    @pytest.mark.regression
+    @pytest.mark.usefixtures("auth")
     def test_continue_shopping(self, app):
         """
         1. Авторизоваться
