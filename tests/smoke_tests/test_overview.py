@@ -12,7 +12,7 @@ class TestOverview:
     @pytestrail.case("")
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.usefixtures("product_in_cart")
     def test_move_to_overview(self, app):
         """
         1. Авторизоваться
@@ -25,9 +25,6 @@ class TestOverview:
         8. Проверить нахождение на странице Overview
         """
         personal_data = PersonalInfo.random()
-        app.main_page.move_to_product_click()
-        app.product_page.add_to_cart_click()
-        app.product_page.cart_icon_click()
         app.cart_page.checkout_click()
         app.checkout_page.input_all_value(
             firstname=personal_data.firstname,
@@ -45,7 +42,7 @@ class TestOverview:
     @pytestrail.case("")
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.usefixtures("product_in_cart")
     def test_cancel_button_click(self, app):
         """
         1. Авторизоваться
@@ -59,9 +56,6 @@ class TestOverview:
         9. Проверить нахождение на главной странице
         """
         personal_data = PersonalInfo.random()
-        app.main_page.move_to_product_click()
-        app.product_page.add_to_cart_click()
-        app.product_page.cart_icon_click()
         app.cart_page.checkout_click()
         app.checkout_page.input_all_value(
             firstname=personal_data.firstname,
@@ -122,7 +116,7 @@ class TestOverview:
     @pytestrail.case("")
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.usefixtures("product_in_cart")
     def test_finish_button_click(self, app):
         """
         1. Авторизоваться
@@ -136,9 +130,6 @@ class TestOverview:
         9. Проверить нахождение на финальной странице
         """
         personal_data = PersonalInfo.random()
-        app.main_page.move_to_product_click()
-        app.product_page.add_to_cart_click()
-        app.product_page.cart_icon_click()
         app.cart_page.checkout_click()
         app.checkout_page.input_all_value(
             firstname=personal_data.firstname,
