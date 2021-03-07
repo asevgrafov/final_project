@@ -52,7 +52,7 @@ class TestCart:
 
     @allure.story("Cart")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C25")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -72,7 +72,7 @@ class TestCart:
 
     @allure.story("Cart")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C26")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -92,7 +92,7 @@ class TestCart:
 
     @allure.story("Cart")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C27")
     @pytest.mark.skip(
         reason="Alert о невозможности перейти к оформлению заказа "
         "с пустой корзиной не появляется"
@@ -104,7 +104,7 @@ class TestCart:
         """
         1. Авторизоваться
         2. Перейти в корзину
-        3. Проверить что она пуста
+        3. Проверить что корзина пуста
         4. Кликнуть на кнопку Checkout
         5. Сравнить текст Alert'a
         """
