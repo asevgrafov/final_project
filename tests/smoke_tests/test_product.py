@@ -6,7 +6,7 @@ from pytest_testrail.plugin import pytestrail
 class TestProduct:
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C28")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -22,7 +22,7 @@ class TestProduct:
 
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C29")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -30,7 +30,7 @@ class TestProduct:
         """
         1. Авторизоваться
         2. Перейти на карточку товара
-        3. Перейти обратно с помощью кнопки Back
+        3. Перейти на главную страницу с помощью кнопки Back
         4. Проверить нахождение на главной странице
         """
         app.main_page.move_to_product_click()
@@ -39,7 +39,7 @@ class TestProduct:
 
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C30")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -57,7 +57,7 @@ class TestProduct:
 
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C31")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")

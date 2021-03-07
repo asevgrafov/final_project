@@ -9,7 +9,7 @@ from models.fake_data import PersonalInfo
 class TestOverview:
     @allure.story("Overview")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C32")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -39,7 +39,7 @@ class TestOverview:
 
     @allure.story("Overview")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C33")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -70,7 +70,7 @@ class TestOverview:
 
     @allure.story("Overview")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C34")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -113,7 +113,7 @@ class TestOverview:
 
     @allure.story("Overview")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C35")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")

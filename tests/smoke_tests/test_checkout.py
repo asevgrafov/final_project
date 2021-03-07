@@ -29,7 +29,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("")
+    @pytestrail.case("C24")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
