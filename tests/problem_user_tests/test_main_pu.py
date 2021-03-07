@@ -46,6 +46,7 @@ class TestFooterMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
+    @pytest.mark.skip(reason="Не всегда открывает ссылку однообразно")
     @pytest.mark.pu
     @pytest.mark.usefixtures("auth_pu")
     def test_facebook_click(self, app):
