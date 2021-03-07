@@ -12,7 +12,7 @@ class TestCheckout:
     @pytestrail.case("C5")
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.usefixtures("product_in_cart")
     def test_checkout_page(self, app):
         """
         1. Авторизоваться
@@ -22,9 +22,6 @@ class TestCheckout:
         5. Перейти к странице checkout
         6. Проверить заголовок страницы
         """
-        app.main_page.move_to_product_click()
-        app.product_page.add_to_cart_click()
-        app.product_page.cart_icon_click()
         app.cart_page.checkout_click()
         assert app.checkout_page.get_subheader_text() == CheckoutSubheader.CHECKOUT
         app.checkout_page.cancel_click()
@@ -35,7 +32,7 @@ class TestCheckout:
     @pytestrail.case("")
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.usefixtures("product_in_cart")
     def test_back_to_cart(self, app):
         """
         1. Авторизоваться
@@ -46,9 +43,6 @@ class TestCheckout:
         6. Вернуться назад в корзину
         7. Проверить нахождение на странице корзины
         """
-        app.main_page.move_to_product_click()
-        app.product_page.add_to_cart_click()
-        app.product_page.cart_icon_click()
         app.cart_page.checkout_click()
         app.checkout_page.cancel_click()
         assert app.cart_page.subheader_text() == Cart.YOUR_CART

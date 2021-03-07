@@ -55,7 +55,7 @@ class TestCart:
     @pytestrail.case("")
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.usefixtures("product_in_cart")
     def test_remove_from_cart(self, app):
         """
         1. Авторизоваться
@@ -66,9 +66,6 @@ class TestCart:
         6. Кликнуть по кнопке Remove
         7. Проверить отсутствие кнопки remove
         """
-        app.main_page.move_to_product_click()
-        app.product_page.add_to_cart_click()
-        app.product_page.cart_icon_click()
         assert app.cart_page.remove_is_visible() is True
         app.cart_page.remove_button_click()
         assert app.cart_page.remove_is_visible() is False
@@ -78,7 +75,7 @@ class TestCart:
     @pytestrail.case("")
     @pytest.mark.smoke
     @pytest.mark.regression
-    @pytest.mark.usefixtures("auth")
+    @pytest.mark.usefixtures("product_in_cart")
     def test_continue_shopping(self, app):
         """
         1. Авторизоваться
@@ -88,10 +85,29 @@ class TestCart:
         5. Кликнуть на кнопку Continue shopping
         6. Проверить нахождение на главной странице
         """
-        app.main_page.move_to_product_click()
-        app.product_page.add_to_cart_click()
-        app.product_page.cart_icon_click()
         app.cart_page.continue_shopping_click()
         assert app.main_page.is_products_present() is True
         app.main_page.cart_icon_click()
         app.cart_page.remove_button_click()
+
+    @allure.story("Cart")
+    @allure.severity("minor")
+    @pytestrail.case("")
+    @pytest.mark.skip(
+        reason="Alert о невозможности перейти к оформлению заказа "
+        "с пустой корзиной не появляется"
+    )
+    @pytest.mark.smoke
+    @pytest.mark.regression
+    @pytest.mark.usefixtures("auth")
+    def test_empty_cart_continue(self, app):
+        """
+        1. Авторизоваться
+        2. Перейти в корзину
+        3. Проверить что она пуста
+        4. Кликнуть на кнопку Checkout
+        5. Сравнить текст Alert'a
+        """
+        app.main_page.cart_icon_click()
+        assert app.main_page.is_element_present() is False
+        app.cart_page.checkout_click()
