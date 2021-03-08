@@ -2,9 +2,10 @@
 
 # Swag Labs
 
-UI python tests with selenium https://www.saucedemo.com/
+Цель - автоматизация тестирование web-приложения с помощью PyTest + Selenium + Python
 
-This is a test project for training. PyTest + Selenium + Python
+https://www.saucedemo.com/
+
 
 
 ### How to start
@@ -19,65 +20,40 @@ This is a test project for training. PyTest + Selenium + Python
     pytest -m smoke
       ```
 5. Для отчётов используется Allure http://allure.qatools.ru/
-6. Для хранения документации используется Testrail https://www.gurock.com/testrail/
 
+   Запуск
 
+    ```buildoutcfg
+    pytest --alluredir <dir_name>
+    ```
 
-# Контроль качества кода
+    Просмотр отчёта
 
-Реализован с помощью pre-commit hook, который проверяет и форматирует код перед коммитом.
+    > Запустить команду в powershell в той папке, где лежит <dir_name>
 
-## Установка
+    ```buildoutcfg
+    allure serve <dir_name>
+    ```
 
+6. Для хранения документации используется Testrail https://finalproject2021.testrail.io/index.php?/projects/overview/1
+
+    Запуск
+
+    ```buildoutcfg
+    pytest --testrail --tr-config=testrail.cfg
+    ```
+
+7. Контроль качества кода реализован с помощью pre-commit hook. Хук запускается автоматически перед коммитом.
+
+   Установка
+
+    ```buildoutcfg
     pip install pre-commit
     pre-commit install
+    ```
 
-## Использование
+    Принудительный запуск:
 
-Хук запускается автоматически перед коммитом. Принудительный запуск:
-
+    ```buildoutcfg
     pre-commit run --all-files
-
-
-# Отчёты
-
-Для удобного анализа результатов тестирования, добавлен функционал построения очётов
-
-## Отчёты в Allure
-
-### Установка
-
-**Scoop**
-
-В powershell выполнить две команды для установки scoop:
-
-    Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-
-    Invoke-Expression (New-Object System.Net.WebClient).DownloadString('[https://get.scoop.sh]')
-
-**Allure**
-
-C помощью scoop установить Allure:
-
-       scoop install allure
-
->Необходимо проверить, установлена ли Java. Для этого ввести allure и нажать enter. Если не установлена, то необходимо установить и добавить в переменные окружения.
-
-### Запуск
-
-    pytest --alluredir <dir_name>
-
-### Просмотр отчёта
-
-> Запустить команду в powershell в той папке, где лежит <dir_name>
-
-    allure serve <dir_name>
-
-## Testrail
-
-
-https://finalproject2021.testrail.io/index.php?/projects/overview/1
-
-## Запуск
-
-    pytest --testrail --tr-config=testrail.cfg
+    ```
