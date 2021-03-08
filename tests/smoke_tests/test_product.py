@@ -6,7 +6,7 @@ from pytest_testrail.plugin import pytestrail
 class TestProduct:
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("C28")
+    @pytestrail.case("C18")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -22,7 +22,7 @@ class TestProduct:
 
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("C29")
+    @pytestrail.case("C19")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -39,7 +39,7 @@ class TestProduct:
 
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("C30")
+    @pytestrail.case("C20")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -57,7 +57,7 @@ class TestProduct:
 
     @allure.story("Product")
     @allure.severity("minor")
-    @pytestrail.case("C31")
+    @pytestrail.case("C21")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")

@@ -8,7 +8,7 @@ from common.constants import MainFooter, Cart, MainHeader, SauceLabs, Title
 class TestFooterMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C9")
+    @pytestrail.case("C4")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -28,7 +28,7 @@ class TestFooterMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C19")
+    @pytestrail.case("C5")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -52,7 +52,7 @@ class TestFooterMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
     @pytest.mark.skip(reason="Не всегда открывает ссылку однообразно")
-    @pytestrail.case("C20")
+    @pytestrail.case("C6")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -76,7 +76,7 @@ class TestFooterMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
     @pytest.mark.skip(reason="Linkedin заблокирован в России")
-    @pytestrail.case("C21")
+    @pytestrail.case("C7")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -101,7 +101,7 @@ class TestFooterMain:
 class TestHeaderMain:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C11")
+    @pytestrail.case("C8")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -118,7 +118,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C12")
+    @pytestrail.case("C9")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -135,7 +135,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C13")
+    @pytestrail.case("C10")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -152,7 +152,7 @@ class TestHeaderMain:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C14")
+    @pytestrail.case("C11")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -179,7 +179,7 @@ class TestHeaderMain:
 class TestFilterProducts:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C15")
+    @pytestrail.case("C12")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -200,7 +200,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C16")
+    @pytestrail.case("C13")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -222,7 +222,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C17")
+    @pytestrail.case("C14")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -244,7 +244,7 @@ class TestFilterProducts:
 
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C18")
+    @pytestrail.case("C15")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
@@ -268,14 +268,14 @@ class TestFilterProducts:
 class TestItemsPresent:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C22")
+    @pytestrail.case("C16")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")
     def test_items_present(self, app):
         """
         1. Авторизоваться
-        2. Проверить наличие продуктов на странице
+        2. Проверить наличие товаров на странице
         """
         products = app.main_page.find_products()
         assert len(products) > 0
@@ -284,7 +284,7 @@ class TestItemsPresent:
 class TestAddAndRemoveToCart:
     @allure.story("Главная страница")
     @allure.severity("minor")
-    @pytestrail.case("C23")
+    @pytestrail.case("C17")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("auth")

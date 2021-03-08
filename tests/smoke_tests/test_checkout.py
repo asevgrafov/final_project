@@ -9,7 +9,7 @@ from models.fake_data import PersonalInfo
 class TestCheckout:
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C5")
+    @pytestrail.case("C27")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -29,7 +29,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C24")
+    @pytestrail.case("C28")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -50,7 +50,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C6")
+    @pytestrail.case("C29")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -61,7 +61,8 @@ class TestCheckout:
         3. Добавить товар в корзину
         4. Перейти в корзину
         5. Перейти к странице checkout
-        6. Проверить alert об обязательном поле firstname
+        6. Кликнуть на кнопку continue
+        7. Проверить alert об обязательном поле firstname
         """
         app.cart_page.checkout_click()
         app.checkout_page.continue_click()
@@ -71,7 +72,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C7")
+    @pytestrail.case("C30")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -83,7 +84,8 @@ class TestCheckout:
         4. Перейти в корзину
         5. Перейти к странице checkout
         6. Ввести валидные данные в поле firstname
-        7. Проверить alert об обязательном поле lastname
+        7. Кликнуть на кнопку continue
+        8. Проверить alert об обязательном поле lastname
         """
         personal_data = PersonalInfo.random()
         app.cart_page.checkout_click()
@@ -95,7 +97,7 @@ class TestCheckout:
 
     @allure.story("Checkout")
     @allure.severity("minor")
-    @pytestrail.case("C8")
+    @pytestrail.case("C31")
     @pytest.mark.smoke
     @pytest.mark.regression
     @pytest.mark.usefixtures("product_in_cart")
@@ -108,7 +110,8 @@ class TestCheckout:
         5. Перейти к странице checkout
         6. Ввести валидные данные в поле firstname
         7. Ввести валидные данные в поле lastname
-        8. Проверить alert об обязательном поле postal_code
+        8. Кликнуть на кнопку continue
+        9. Проверить alert об обязательном поле postal_code
         """
         personal_data = PersonalInfo.random()
         app.cart_page.checkout_click()
