@@ -2,7 +2,7 @@
 
 # Swag Labs
 
-Цель - автоматизация тестирование web-приложения с помощью PyTest + Selenium + Python
+Цель - автоматизация тестирования web-приложения с помощью PyTest + Selenium + Python
 
 https://www.saucedemo.com/
 
