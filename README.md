@@ -1,8 +1,27 @@
-# final_project
 [![Build Status](https://travis-ci.com/asevgrafov/final_project.svg?branch=main)](https://travis-ci.com/asevgrafov/final_project)
-# Автотесты
 
-Selenium Python
+# Swag Labs
+
+UI python tests with selenium https://www.saucedemo.com/
+
+This is a test project for training. PyTest + Selenium + Python
+
+
+### How to start
+1. Использовать python 3.6 +
+2. Создать виртуальное окружение https://docs.python.org/3/library/venv.html
+3. Выполнить команду в терминале
+    ```buildoutcfg
+    pip install -r requirements.txt
+    ```
+4. Запустить тесты при помощи команды
+    ```buildoutcfg
+    pytest -m smoke
+      ```
+5. Для отчётов используется Allure http://allure.qatools.ru/
+6. Для хранения документации используется Testrail https://www.gurock.com/testrail/
+
+
 
 # Контроль качества кода
 
@@ -18,14 +37,6 @@ Selenium Python
 Хук запускается автоматически перед коммитом. Принудительный запуск:
 
     pre-commit run --all-files
-
-## Запуск конкретной проверки
-
-  `pre-commit run <hook_id> <options>`
-
-`hook-id`  - идентификатор хука;
-`-a, --all-files`   - запуск всех все файлов в репозитории;
-`--files [FILES[FILES...]]`   - запуск для конкретных файлов.
 
 
 # Отчёты
