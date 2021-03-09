@@ -149,6 +149,9 @@ class TestHeaderMain:
         app.main_page.burger_button_click()
         app.main_page.logout_click()
         assert app.authorization.get_title() == Title.TITLE
+        assert app.authorization.username_field_is_visible() is True
+        assert app.authorization.password_field_is_visible() is True
+        assert app.authorization.login_button_is_visible() is True
 
     @allure.story("Главная страница")
     @allure.severity("minor")
