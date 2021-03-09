@@ -173,6 +173,7 @@ class TestHeaderMain:
         app.main_page.move_to_product_click()
         app.product_page.add_to_cart_click()
         assert app.main_page.products_in_cart_text() == Cart.PRODUCT_IN_CART
+        assert app.main_page.is_element_present() is True
         app.main_page.burger_button_click()
         app.main_page.reset_app_click()
         app.main_page.all_items_click()
