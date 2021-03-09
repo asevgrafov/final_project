@@ -35,7 +35,7 @@ https://www.saucedemo.com/
     allure serve <dir_name>
     ```
 
-6. Для хранения документации используется Testrail https://finalproject2021.testrail.io/index.php?/projects/overview/1
+6. Для хранения документации используется Testrail https://swaglabsqa.testrail.io/index.php?/projects/overview/1
 
     Запуск
 
